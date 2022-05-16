@@ -21,6 +21,7 @@ HTTP REQUEST PREPROCESSOR APPLICATION
              }
           }
        }
+4. 
 
 #. Keep log file name to 'access.log'
 http://localhost:5080/stats

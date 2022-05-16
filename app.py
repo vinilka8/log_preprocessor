@@ -10,11 +10,15 @@ pattern_ip = re.compile(r'[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 
 
 @app.route('/stats')
+def show_statistics():
+    ips_dict = read_file()
+    return json.dumps(ips_dict)
+
+
 def read_file():
     with open(os.environ['LOGFILENAME'], 'r') as f:
         ips_dict = get_dict_of_ips(f)
-    print(ips_dict)
-    return json.dumps(ips_dict)
+    return ips_dict
 
 
 def get_dict_of_ips(f):
